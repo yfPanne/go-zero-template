@@ -7,6 +7,9 @@ package model
 
 var _ {{.Type}}Model = (*custom{{.Type}}Model)(nil)
 
+{{if .Cache}}// TODO: you should customize the cache key prefix here{{end}}
+{{if .Cache}}var prefix{{.Type}}CustomCacheKey = "custom:" + "cache:"{{end}}
+
 type (
     // {{.Type}}Model is an interface to be customized, add more methods here,
     // and implement the added methods in custom{{.Type}}Model.
